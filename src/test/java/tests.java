@@ -5,10 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class tests {
 
-    Greeter greeter = new Greeter();
+
 
     @Test
     public void userCount(){
+        Greeter greeter = new Greeter();
 
         greeter.greeter("Phumlani","IsiXhosa");
         greeter.greeter("Thabang", "Sepedi");
@@ -22,6 +23,8 @@ public class tests {
 
     @Test
     public void greet(){
+
+        Greeter greeter = new Greeter();
 
         greeter.greeter("Sesethu", "Sepedi");
         assertEquals("Thobela Sesethu!", greeter.greeter("Sesethu","Sepedi"));
