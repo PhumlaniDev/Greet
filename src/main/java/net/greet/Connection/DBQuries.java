@@ -8,14 +8,14 @@ import java.sql.DriverManager;
 
 public class DBQuries  implements Greetings {
 
-    final String KOANS_DATABASE_URL = "jdbc:h2:./target/jdbc_koans_db";
-    static final String JDBC_DRIVER = "org.h2.Driver";
+    final String KOANS_DATABASE_URL = "jdbc:h2:./target/greet_db";
+    final String JDBC_DRIVER = "org.h2.Driver";
     String username = "sa";
     String password = "";
 
     public Connection getConnection() throws Exception {
 
-        Class.forName("org.h2.Driver");
+        Class.forName(JDBC_DRIVER);
 
         Connection conn = DriverManager.getConnection(KOANS_DATABASE_URL, username, password);
         return conn;
