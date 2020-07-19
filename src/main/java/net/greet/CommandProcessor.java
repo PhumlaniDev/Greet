@@ -8,7 +8,7 @@ public class CommandProcessor {
         this.greetings = greetings;
     }
 
-    public String commanding(Commands command){
+    public String commanding(Commands command) throws Exception {
 
             if (command.getCommand().equals("greet")) {
                 if (command.getName().equals("")) {
@@ -19,7 +19,7 @@ public class CommandProcessor {
             }
 
             else if (command.getCommand().equals("greeted")) {
-                if (command.getName() != "") {
+                if (command.getName().equals("")) {
                     return greetings.greetedUser(command.getName());
                 }
 
@@ -27,7 +27,7 @@ public class CommandProcessor {
             }
 
             else if (command.getCommand().equals("clear")) {
-                if (command.getCommand() != "") {
+                if (command.getCommand().equals("")) {
                     return greetings.clear(command.getName());
                 } else {
                     return greetings.clearAll();

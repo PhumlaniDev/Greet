@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Greet {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("*******************************");
@@ -18,6 +18,11 @@ public class Greet {
             Commands commandProcessor = new Commands(userInput);
 
             if (commandProcessor.getCommand().equals("greet")){
+                try {
+                    commands.commanding(commandProcessor);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
 
@@ -25,7 +30,11 @@ public class Greet {
                 return;
             }
             else{
-                System.out.println(commands.commanding(commandProcessor));
+                try {
+                    System.out.println(commands.commanding(commandProcessor));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }while (true);
 
